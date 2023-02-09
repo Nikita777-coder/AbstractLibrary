@@ -1,6 +1,7 @@
 package library.manangement;
 
 import library.Book;
+import library.stream.ConsoleHandler;
 
 import java.util.*;
 
@@ -121,6 +122,11 @@ public class Library {
     public Library(LibraryAdmin admin) {
         booksGroupedByAuthor = new HashMap<>();
         this.admin = admin;
+    }
+
+    public Library(Map<String, List<Book>> booksGroupedByAuthor) {
+        this.booksGroupedByAuthor = booksGroupedByAuthor;
+        admin = new LibraryAdmin(new ConsoleHandler());
     }
     public void fillLibraryWithRandomGeneratedBooks() {
         booksGroupedByAuthor.clear();

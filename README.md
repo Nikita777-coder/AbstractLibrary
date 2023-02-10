@@ -1,4 +1,4 @@
-# Library
+# Abstract Library
 
 ## Interface
 #### Getting book

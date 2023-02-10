@@ -14,6 +14,8 @@ class LibraryTest {
 
     @Test
     void put() {
+        // И тут я понял, зачем нужно было делать прогу максимально несвязанной, но мне лень переделывать).
+
         Library libOk;
         Library libTest = new Library(new LibraryAdmin(new ConsoleHandler()));
         Map<String, List<Book>> booksToOkLibrary = new HashMap<>();

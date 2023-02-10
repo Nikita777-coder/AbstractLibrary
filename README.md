@@ -37,3 +37,5 @@ To create not only console menu or for instance file, telegram bot, database men
 - Do interactive menu
 - Make program instruction by available commands
 - Make available to enter the command with request in one line
+- Make all program methods possible to handle all types of requests.
+- Make an indication that the field cannot be empty

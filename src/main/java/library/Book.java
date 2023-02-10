@@ -23,6 +23,19 @@ public class Book {
 
         return builder;
     }
+    protected static String checkOnEmpty(Object obj) {
+        if (!obj.getClass().getSimpleName().equals("String")) {
+            throw new ClassCastException();
+        }
+
+        String trueStr = (String) obj;
+
+        if (!trueStr.matches("(\\w)+")) {
+            throw new NullPointerException();
+        }
+
+        return trueStr;
+    }
     public static Book parse(String book) {
         String[] data = book.split(", ");
         Builder builder = Book.builder();
@@ -55,12 +68,12 @@ public class Book {
 
     public class Builder {
         public Builder title(String title) {
-            Book.this.title = title;
+            Book.this.title = Book.checkOnEmpty(title);
             return this;
         }
 
         public Builder authorName(String authorName) {
-            Book.this.authorName = authorName;
+            Book.this.authorName = checkOnEmpty(authorName);
             return this;
         }
 
@@ -75,16 +88,10 @@ public class Book {
         }
 
         public Book build() {
+            checkOnEmpty(Book.this.title);
+            checkOnEmpty(Book.this.authorName);
             return Book.this;
         }
-    }
-
-    public Book() {
-    }
-
-    public Book(String title, String authorName) {
-        this.title = title;
-        this.authorName = authorName;
     }
 
     public static Builder builder() {
@@ -105,8 +112,14 @@ public class Book {
             return false;
         }
 
+        if (!obj.getClass().getSimpleName().equals("Book")) {
+            return false;
+        }
+
         Book anotherBook = (Book) obj;
-        return anotherBook.title.equals(title) && anotherBook.authorName.equals(authorName) && year == anotherBook.year;
+        return anotherBook.title.equals(title) &&
+                anotherBook.authorName.equals(authorName) &&
+                year == anotherBook.year;
     }
 
     @Override

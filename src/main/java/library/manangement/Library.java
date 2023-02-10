@@ -201,10 +201,6 @@ public class Library {
         }
     }
 
-    public void clearLibrary() {
-        booksGroupedByAuthor.clear();
-    }
-
     public List<Book> getAllBooks() {
         List<Book> allBooks = new ArrayList<>();
 

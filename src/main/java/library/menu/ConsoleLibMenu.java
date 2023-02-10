@@ -34,9 +34,21 @@ public class ConsoleLibMenu implements LibMenu {
     }
     @Override
     public void get() {
+        if (admin.all().isEmpty()) {
+            handler.println("There is no book in library");
+            return;
+        }
+
         handler.print("Enter the name of book: ");
         String bookName = handler.next();
-        handler.println(admin.get(bookName));
+        Book book = admin.get(bookName);
+
+        if (book.instance() == 0) {
+            handler.println("There is no book with this name");
+            return;
+        }
+
+        handler.println(book);
     }
 
     @Override

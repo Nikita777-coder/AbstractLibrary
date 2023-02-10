@@ -2,6 +2,7 @@ package library;
 
 public class Book {
     private String title;
+    private int instance;
     private String authorName;
     private String description;
     private int year = -1;
@@ -30,7 +31,7 @@ public class Book {
 
         String trueStr = (String) obj;
 
-        if (!trueStr.matches("(\\w)+")) {
+        if (!trueStr.matches(".*[0-9a-zA-Z]+.*")) {
             throw new NullPointerException();
         }
 
@@ -90,8 +91,17 @@ public class Book {
         public Book build() {
             checkOnEmpty(Book.this.title);
             checkOnEmpty(Book.this.authorName);
+            instance = 1;
             return Book.this;
         }
+    }
+
+    public Book() {
+        instance = 0;
+    }
+
+    public int instance() {
+        return instance;
     }
 
     public static Builder builder() {

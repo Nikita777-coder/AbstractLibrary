@@ -27,7 +27,17 @@ To create not only console menu or for instance file, telegram bot, database men
 - Year can be parsed from string
 #### making request
 1. You need to enter the command from available commands
+![img_3.png](img_3.png)
 2. You need to enter your request
+![img_2.png](img_2.png)
+- In result, using the example of the get command , it turns out like this
+![img_1.png](img_1.png)
+
+## Available commands
+- get - will get the needful book from library
+- put - will put the needful book to library
+- list - will print list of your books
+- all - will print all books in library
 
 ## In development or in ideas
 - Database with library users
@@ -39,3 +49,4 @@ To create not only console menu or for instance file, telegram bot, database men
 - Make available to enter the command with request in one line
 - Make all program methods possible to handle all types of requests.
 - Make an indication that the field cannot be empty
+- Parsing of command

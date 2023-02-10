@@ -30,6 +30,7 @@ To create not only console menu or for instance file, telegram bot, database men
 ![img_3.png](img_3.png)
 
 2. You need to enter your request
+
 ![img_2.png](img_2.png)
 
 - In result, using the example of the get command , it turns out like this
